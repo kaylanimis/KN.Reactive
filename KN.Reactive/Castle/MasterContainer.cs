@@ -1,6 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using KN.Reactive.ViewModel;
 
 namespace KN.Reactive.Castle
 {
@@ -16,7 +17,7 @@ namespace KN.Reactive.Castle
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<MainViewModel>(), Component.For<MainWindow>());
+            container.Register(Component.For<MainViewModel>(), Component.For<View.MainWindow>());
         }
     }
 }

@@ -15,7 +15,7 @@ namespace KN.Reactive
     public partial class App : Application
     {
         private readonly MasterContainer _container;
-        private MainWindow _mainWindow;
+        private View.MainWindow _mainWindow;
 
         public App()
         {
@@ -25,7 +25,7 @@ namespace KN.Reactive
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            _mainWindow = _container.Resolve<MainWindow>();
+            _mainWindow = _container.Resolve<View.MainWindow>();
             _mainWindow.Show();
         }
 
