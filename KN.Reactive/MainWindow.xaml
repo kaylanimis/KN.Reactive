@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance local:MainViewModel}">
-    <Grid>
-        <Label Content="{Binding HelloText}" />
-    </Grid>
+    <StackPanel>
+        <Label x:Name="HelloWorldLabel" />
+        <Button Content="Click" x:Name="IncrementButton" />
+        <TextBlock x:Name="CounterTextBlock" />
+    </StackPanel>
 </Window>
