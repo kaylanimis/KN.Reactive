@@ -8,12 +8,12 @@ namespace KN.Reactive.ViewModel
     public class MainViewModel : ReactiveObject
     {
         private int _currQty = 0;
-        private readonly ReactiveCommand _incrementQuantity;
+        private readonly ReactiveCommand<object> _incrementQuantity;
         public MainViewModel()
         {
-            var commandCanExecute = this.WhenAny(x => x.Quantity, x => x.Value < 15);
-            _incrementQuantity = new ReactiveCommand(commandCanExecute);
-            _incrementQuantity.Subscribe(x => Quantity++);
+            var commandCanExecute = this.WhenAny(vm => vm.Quantity, qty => qty.Value < 15);
+            _incrementQuantity = ReactiveCommand.Create(commandCanExecute);
+            _incrementQuantity.Subscribe(_ => Quantity++);
         }
 
         public string HelloText => "Hello, World!";
