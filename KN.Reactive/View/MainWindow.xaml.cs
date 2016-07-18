@@ -24,7 +24,8 @@ namespace KN.Reactive.View
             {
                 this.Bind(ViewModel, x => x.HelloText, x => x.HelloWorldLabel.Content),
                 this.Bind(ViewModel, x => x.IncrementQuantity, x => x.IncrementButton.Command),
-                this.Bind(ViewModel, x => x.Quantity, x => x.CounterTextBlock.Text)
+                this.Bind(ViewModel, x => x.Quantity, x => x.CounterTextBlock.Text),
+                this.Bind(ViewModel, x => x.IsBusy, x => x.IsBusy.IsChecked)
             };
         }
 
