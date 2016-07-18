@@ -22,10 +22,11 @@ namespace KN.Reactive.View
         {
             return new[]
             {
-                this.Bind(ViewModel, x => x.HelloText, x => x.HelloWorldLabel.Content),
-                this.Bind(ViewModel, x => x.IncrementQuantity, x => x.IncrementButton.Command),
-                this.Bind(ViewModel, x => x.Quantity, x => x.CounterTextBlock.Text),
-                this.Bind(ViewModel, x => x.IsBusy, x => x.IsBusy.IsChecked)
+                this.Bind(ViewModel, vm => vm.HelloText, v => v.HelloWorldLabel.Content),
+                this.Bind(ViewModel, vm => vm.IncrementQuantity, v => v.IncrementButton.Command),
+                this.Bind(ViewModel, vm => vm.Quantity, v => v.CounterTextBlock.Text),
+                this.Bind(ViewModel, vm => vm.IsBusy, v => v.IsBusy.IsChecked),
+                (IDisposable) this.OneWayBind(ViewModel, vm => vm.Values, v => v.ListBox.ItemsSource)
             };
         }
 

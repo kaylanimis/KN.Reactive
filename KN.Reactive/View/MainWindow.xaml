@@ -13,5 +13,6 @@
         <Button Content="Click" x:Name="IncrementButton" />
         <TextBlock x:Name="CounterTextBlock" />
         <CheckBox x:Name="IsBusy" />
+        <ListBox x:Name="ListBox" DisplayMemberPath="Value" />
     </StackPanel>
 </Window>
